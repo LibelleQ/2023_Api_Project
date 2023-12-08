@@ -1,0 +1,54 @@
+services:
+  frontend:
+    # On utilise nginx pour Servir ledit site (Image alpine pour la légereté)
+    image: nginx:1.16.0-alpine
+    # On rend le service accessible sur le port 8080 de votre machine
+    ports:
+      - 8080:80
+
+    # Le volume bindé au dessier 'front' permet de modifier le code de 'front' et que ce soit pris en compte immédiatement, pour vous faciliter la vie
+    volumes:
+      - ./front:/usr/share/nginx/html/
+
+  # Ensuite, le service de l'API: c'est un API fait avec PHP, qui vous permettra d'assimiler les principes des API Web rapidement en pratiquant.
+  api:
+    # On utilise une image avec PHP et Apache pour servir l'API.
+    build: .
+    # On bind le port 8081 de la machine avec le 80 du conteneur pour pouvoir tester et acceder à l'API
+    ports:
+      - 8081:80
+    # Le code est contenu dans le dossier 'api' et est pris en compte quand on le modifie, comme pour le front.
+    volumes:
+      - ./api:/var/www/html/
+
+  # C'est une base de donnée qui nous servira plus tard dans le cours !
+  database:
+    image: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=todo_db
+      - POSTGRES_USER=todo
+
+  # C'est un outil qui nous servira à gérer la base de donnée avec une interface graphique !
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - 5433:80
+    depends_on:
+      - database
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin:rw
+    environment:
+      - POSTGRES_PASSWORD=password
+      - PGADMIN_DEFAULT_EMAIL=admin@mail.me
+      - PGADMIN_DEFAULT_PASSWORD=password
+
+  # Volume utilisé par pgadmin et la bdd postgresql
+volumes:
+  pgadmin-data:
+  db-data:
