@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter un appartement</title>
+</head>
+<body>
+    <h2>Ajouter un appartement</h2>
+    <form method="post" action="add_apartment.php">
+        <label for="superficie">Superficie :</label>
+        <input type="text" name="superficie" required><br>
+
+        <label for="nombre_personnes">Nombre de personnes :</label>
+        <input type="number" name="nombre_personnes" required><br>
+
+        <label for="adresse">Adresse :</label>
+        <input type="text" name="adresse" required><br>
+
+        <label for="disponibilite">Disponibilité :</label>
+        <input type="text" name="disponibilite" required><br>
+
+        <label for="prix_nuit">Prix à la nuit :</label>
+        <input type="text" name="prix_nuit" required><br>
+
+        <button type="submit">Ajouter</button>
+    </form>
+</body>
+</html>
