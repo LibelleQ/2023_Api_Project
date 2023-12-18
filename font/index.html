@@ -1,25 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Homepage</title>
+    <title>Accueil Public</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Bienvenue</h1>
+        <h1>Bienvenue sur Notre Site Web</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="#">Browse Apartments</a></li>
-            <li><a href="#">Make a Reservation</a></li>
+            <li><a href="#">Parcourir les Appartements</a></li>
+            <li><a href="#">Faire une Réservation</a></li>
+            <li><a href="#">Mes Réservations</a></li>
         </ul>
     </nav>
     <section>
+        <h2>Trouvez Votre Appartement Idéal</h2>
+        <form id="searchForm">
+            <label for="searchTerm">Recherche :</label>
+            <input type="text" id="searchTerm" name="searchTerm" required>
+            <button type="submit">Rechercher</button>
+        </form>
+        <div id="searchResults">
+        </div>
     </section>
     <footer>
-        <p>&copy; 2023 Our Website</p>
+        <p>&copy; 2023 Notre Site Web</p>
     </footer>
 </body>
 </html>

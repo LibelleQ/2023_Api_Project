@@ -1,24 +1,45 @@
 <?php
-include_once('config.php');
-if ($_SESSION['role'] !== 'admin') {
-    header('Location: login.php')
-    exit();
+$servername = "votre_host";
+$username = "votre_utilisateur";
+$password = "votre_mot_de_passe";
+$dbname = "votre_base_de_donnees";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Échec de la connexion à la base de données: " . $conn->connect_error);
 }
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $superficie = $_POST['superficie'];
-    $nombre_personnes = $_POST['nombre_personnes'];
-    $adresse = $_POST['adresse'];
-    $disponibilite = $_POST['disponibilite'];
-    $prix_nuit = $_POST['prix_nuit'];
-    $query = "INSERT INTO appartements (superficie, nombre_personnes, adresse, disponibilite, prix_nuit) 
-              VALUES ('$superficie', '$nombre_personnes', '$adresse', '$disponibilite', '$prix_nuit')";
-    if (mysqli_query($conn, $query)) {
-        echo "Appartement ajouté avec succès.";
-    } else {
-        echo "Erreur lors de l'ajout de l'appartement : " . mysqli_error($conn);
-    }
-    mysqli_close($conn);
+$searchTerm = $_GET['searchTerm'];
+
+$queryUsers = "SELECT * FROM utilisateurs WHERE nom LIKE '%$searchTerm%'";
+$resultUsers = $conn->query($queryUsers);
+$users = array();
+
+while ($row = $resultUsers->fetch_assoc()) {
+    $users[] = $row;
 }
+$queryApartments = "SELECT * FROM appartements WHERE adresse LIKE '%$searchTerm%'";
+$resultApartments = $conn->query($queryApartments);
+$appartements = array();
+
+while ($row = $resultApartments->fetch_assoc()) {
+    $appartements[] = $row;
+}
+
+$queryReservations = "SELECT * FROM reservations WHERE id LIKE '%$searchTerm%'";
+$resultReservations = $conn->query($queryReservations);
+$reservations = array();
+
+while ($row = $resultReservations->fetch_assoc()) {
+    $reservations[] = $row;
+}
+
+$conn->close();
+$response = array(
+    'utilisateurs' => $users,
+    'appartements' => $appartements,
+    'reservations' => $reservations
+);
+
+header('Content-Type: application/json');
+echo json_encode($response);
 ?>
-
-

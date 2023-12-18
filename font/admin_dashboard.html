@@ -1,25 +1,50 @@
+<!-- admin_dashboard.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Tableau de bord Admin</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur la page administrateur</h1>
+        <h1>Bienvenue dans le Tableau de bord Admin</h1>
     </header>
     <nav>
         <ul>
-            <li><a href="#">Manage Apartments</a></li>
-            <li><a href="#">View Reservations</a></li>
+            <li><a href="#">Gérer les Appartements</a></li>
+            <li><a href="#">Voir les Réservations</a></li>
+            <li><a href="#">Gérer les Réservations</a></li>
         </ul>
     </nav>
     <section>
+        <h2>Ajouter un Nouvel Appartement</h2>
+        <form action="/admin/add-apartment" method="post">
+            <label for="area">Superficie :</label>
+            <input type="text" id="area" name="area" required>
+
+            <label for="capacity">Capacité :</label>
+            <input type="text" id="capacity" name="capacity" required>
+
+            <label for="address">Adresse :</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="availability">Disponibilité :</label>
+            <input type="checkbox" id="availability" name="availability" checked>
+
+            <label for="price">Prix par Nuit :</label>
+            <input type="text" id="price" name="price" required>
+
+            <button type="submit">Ajouter l'Appartement</button>
+        </form>
+
+        <h2>Gérer les Réservations</h2>
+        <!-- Ajouter ici l'interface de gestion des réservations -->
     </section>
     <footer>
-        <p>&copy; 2023 Admin Dashboard</p>
+        <p>&copy; 2023 Tableau de bord Admin</p>
     </footer>
 </body>
 </html>
