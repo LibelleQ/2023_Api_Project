@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Apartment Rental</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="dashboard.js"></script>
+    <script src="global.js"></script>
+    <div id="menu-container">
+      <!-- Le contenu du menu sera inséré ici dynamiquement -->
+    </div>
+  </head>
+  <body>
+    <h1>The best to-do list you've ever seen</h1>
+    <form id="apartmentForm">
+      <label for="surface_area">Surface Area:</label><br />
+      <input type="text" name="surface_area" id="surface_area" /><br />
+
+      <label for="capacity">Capacity:</label><br />
+      <input type="text" name="capacity" id="capacity" /><br />
+
+      <label for="address">Address:</label><br />
+      <input type="text" name="address" id="address" /><br />
+
+      <label for="availability">Availability:</label><br />
+      <select name="availability" id="availability">
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select><br />
+
+      <label for="night_price">Night Price:</label><br />
+      <input type="text" name="night_price" id="night_price" /><br />
+
+      <button type="button" id="createApartment">Create</button>
+    </form>
+    <div id="error-container"></div>
+
+    <script src="create.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+* {
+    margin: 15px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: red;
+  }
+  
+  .content {
+    text-align: center;
+    width: 100%;
+  }
+  
+  button {
+    width: 80px;
+  }
+  
+  li {
+    list-style-type: none;
+  }
+  
+  .list-item {
+    display: inline-block;
+    width: 100%;
+  }
+  

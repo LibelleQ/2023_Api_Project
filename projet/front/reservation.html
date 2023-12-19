@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Apartment Rental</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="global.js"></script>
+    <div id="menu-container">
+      <!-- Le contenu du menu sera inséré ici dynamiquement -->
+    </div>
+  </head>
+  <body>
+    <section>
+      <ul>
+        <li>
+          <a href="./add.html">Add a new apartment to the catalogue</a>
+          <a href="./signup.html">Create a new account</a>
+        </li>
+      </ul>
+    </section>
+    <h1>For customers</h1>
+    <p>The page where you can read the catalogue and make a reservation !</p><br>
+    <div class="content" id="data-to-replace">
+      Please wait, the apartment catalogue is loading !
+    </div>
+
+    <h2>Reserve an Apartment</h2>
+<form id="reservation-form">
+  <label for="apartment-id">Apartment ID:</label>
+  <select id="apartment-id" name="apartment-id"></select><br />
+
+  <label for="start-date">Start Date:</label>
+  <input type="date" id="start-date" name="start-date" required /><br />
+
+  <label for="end-date">End Date:</label>
+  <input type="date" id="end-date" name="end-date" required /><br />
+
+  <label for="customer-id">Customer ID:</label>
+  <input type="text" id="customer-id" name="customer-id" required /><br />
+
+  <label for="price">Price:</label>
+  <span id="priceDisplay"></span><br />
+
+  <button type="submit">Reserve Apartment</button>
+</form>
+
+
+    <script src="reservation.js"></script>
+    <script src="index.js"></script>
+
+  </body>
+</html>
