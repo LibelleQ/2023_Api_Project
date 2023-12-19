@@ -1,27 +1,131 @@
-* {
-    margin: 15px;
-  }
-  
-  h1 {
-    text-align: center;
-    color: red;
-  }
-  
-  .content {
-    text-align: center;
-    width: 100%;
-  }
-  
-  button {
-    width: 80px;
-  }
-  
-  li {
-    list-style-type: none;
-  }
-  
-  .list-item {
-    display: inline-block;
-    width: 100%;
-  }
-  
+/* Global Styles */
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Navigation Section Styles */
+
+section {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Content Container Styles */
+
+.content {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label,
+input,
+select,
+button {
+  display: block;
+  margin: 10px auto;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Links in Content Styles */
+
+.content a {
+  display: block;
+  margin-top: 10px;
+  color: #3498db;
+}
+
+.content a:hover {
+  text-decoration: underline;
+}
+
+/* Additional Styles for Specific Pages */
+
+#reservation-form {
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#signin-form,
+#signup-form {
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#message-container {
+  text-align: center;
+  color: #ff0000;
+  margin-top: 10px;
+}

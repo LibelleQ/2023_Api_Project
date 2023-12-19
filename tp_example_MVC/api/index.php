@@ -4,8 +4,6 @@ include_once './commons/request.php';
 include_once './commons/response.php';
 include_once './commons/middlewares/json_middleware.php';
 include_once './commons/exceptions/controller_exceptions.php';
-// error_reporting(E_ERROR | E_PARSE);
-
 class GeneralController {
     function dispatch (Request $req,Response $res): void {
         $res->setMessage("Welcome to the music API !");

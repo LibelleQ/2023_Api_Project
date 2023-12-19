@@ -52,6 +52,4 @@ function fetchApartments() {
     .catch((err) => console.log(err));
 }
 
-
-// Charger la liste des appartements au chargement de la page
 fetchApartments();
