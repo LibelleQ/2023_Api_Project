@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Apartment Rental</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="global.js"></script>
+
+    <div id="menu-container">
+    </div>
+</head>
+<body>
+<section>
+    <ul>
+        <li>
+            <a href="./add.html">Add a new apartment to the catalogue</a>
+            <a href="./signup.html">Create a new account</a>
+        </li>
+    </ul>
+</section>
+<h1>For interns</h1>
+<p>Here, you can modify any apartment info!</p><br>
+<div class="content" id="data-to-replace">
+    Please wait, the apartment catalogue is loading!
+</div>
+
+<h2>Modify an Apartment</h2>
+<form id="apartment_edit">
+    <label for="apartment-id">Apartment ID:</label>
+    <select id="apartment-id" name="apartment-id"></select><br />
+
+    <label for="surface-area">Surface Area:</label>
+    <input type="text" id="surface-area" name="surface-area" /><br />
+
+    <label for="capacity">Capacity:</label>
+    <input type="text" id="capacity" name="capacity" /><br />
+
+    <label for="address">Address:</label>
+    <input type="text" id="address" name="address" /><br />
+
+    <label for="availability">Availability:</label>
+    <input type="checkbox" id="availability" name="availability">
+    <select id="availability" name="availability">
+        <option value="true">Available</option>
+        <option value="false">Not Available</option>
+    </select><br />
+
+
+    <label for="night-price">Night Price:</label>
+    <input type="text" id="night-price" name="night-price" /><br />
+
+    <button type="submit">Modify Apartment</button>
+</form>
+<script src="apartment_edit.js"></script>
+
+
+</body>
+</html>

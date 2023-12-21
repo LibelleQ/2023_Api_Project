@@ -1,0 +1,31 @@
+services:
+  frontend:
+    image: nginx:1.16.0-alpine
+    ports:
+      - 8080:80
+
+    volumes:
+      - ./front:/usr/share/nginx/html/
+
+  api:
+    build: .
+    ports:
+      - 8082:80
+    volumes:
+      - ./api:/var/www/html/
+
+  database:
+    image: postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data/
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=apartment_project
+      - POSTGRES_USER=user
+
+volumes:
+  pgadmin-data:
+  db-data:
